@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+
+# Environment
+.env
+jenkins-credentials.md
+
+# Jenkins and Scripts
+*.war
+*.sh
+
+# OS
+.DS_Store
+Thumbs.db
