@@ -43,8 +43,8 @@ This framework provides automated testing for the Books API with the following f
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/joacolabrisca/avenga_challenge_solution.git
-   cd avenga_challenge_solution
+   git clone https://github.com/joacolabrisca/avenga-challenge.git
+   cd avenga-challenge
    ```
 
 2. **Create virtual environment**
@@ -249,7 +249,7 @@ java -jar jenkins.war --httpPort=8081
 #### Configure Pipeline
 1. **General Settings**:
    - ✅ Discard old builds
-   - ✅ GitHub project: `https://github.com/joacolabrisca/avenga_challenge_solution`
+   - ✅ GitHub project: `https://github.com/joacolabrisca/avenga-challenge`
 
 2. **Build Triggers**:
    - ✅ Poll SCM: `H/2 * * * *` (check every 2 minutes)
@@ -258,7 +258,7 @@ java -jar jenkins.war --httpPort=8081
 3. **Pipeline Definition**:
    - **Definition**: Pipeline script from SCM
    - **SCM**: Git
-   - **Repository URL**: `https://github.com/joacolabrisca/avenga_challenge_solution.git`
+   - **Repository URL**: `https://github.com/joacolabrisca/avenga-challenge.git`
    - **Credentials**: Select your GitHub token
    - **Branch Specifier**: `*/master`
    - **Script Path**: `Jenkinsfile`
