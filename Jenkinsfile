@@ -115,6 +115,7 @@ pipeline {
                     echo "🧪 Running API automation tests..."
                     
                     if (isUnix()) {
+                        // Run tests with detailed output
                         sh '''
                             if [ "$(uname)" == "Darwin" ]; then
                                 source venv/bin/activate
@@ -127,6 +128,7 @@ pipeline {
                             echo "Test execution completed"
                         '''
                     } else {
+                        // Run tests with detailed output
                         bat '''
                             venv\\Scripts\\python.exe -m pytest tests/test_books_api.py -v --tb=short
                             echo Test execution completed
@@ -144,6 +146,7 @@ pipeline {
                     echo "📊 Generating test reports..."
                     
                     if (isUnix()) {
+                        // Generate reports with detailed output
                         sh '''
                             if [ "$(uname)" == "Darwin" ]; then
                                 source venv/bin/activate
@@ -163,6 +166,7 @@ pipeline {
                             echo "Reports generated successfully"
                         '''
                     } else {
+                        // Generate reports with detailed output
                         bat '''
                             venv\\Scripts\\python.exe -m pytest tests/test_books_api.py --html=reports/report.html --self-contained-html --tb=short
                             venv\\Scripts\\python.exe -m pytest tests/test_books_api.py --cov=tests --cov-report=html:reports/coverage --cov-report=term-missing
@@ -238,6 +242,7 @@ pipeline {
         
         success {
             script {
+                // Display test results
                 echo "🎉 Build completed successfully!"
                 echo "📊 Test Results:"
                 echo "   - HTML Report: Available in build artifacts"
@@ -248,6 +253,7 @@ pipeline {
         
         failure {
             script {
+                // Display failure message
                 echo "❌ Build failed!"
                 echo "🔍 Check the console output for details"
                 echo "📧 Consider checking:"
@@ -259,6 +265,7 @@ pipeline {
         
         unstable {
             script {
+                // Display unstable message
                 echo "⚠️ Build unstable - some tests may have failed"
                 echo "📊 Check test reports for details"
             }
